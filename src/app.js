@@ -10,7 +10,6 @@ const quoteRouter = require('./routers/quote.router')
 
 const app = express()
 app.use(express.json())
-app.use(cors)
 app.use(userRouter)
 app.use(productRouter)
 app.use(grainRouter)
