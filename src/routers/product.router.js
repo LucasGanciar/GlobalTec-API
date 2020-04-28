@@ -7,7 +7,11 @@ router.post('/products', auth, async (req, res) => {
     const product = new Product(req.body)
     try {
         await product.save()
-        res.status(201).send(product)
+        res
+            .status(201)
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Credentials", "true")
+            .send(product)
     } catch(error) {
         res.status(400).send(error)
     }
