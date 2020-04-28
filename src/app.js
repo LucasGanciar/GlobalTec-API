@@ -8,6 +8,7 @@ const widthRouter = require('./routers/width.router')
 const quoteRouter = require('./routers/quote.router')
 
 const app = express()
+app.use(cors({ origin: true }))
 app.use(express.json())
 app.use(userRouter)
 app.use(productRouter)
